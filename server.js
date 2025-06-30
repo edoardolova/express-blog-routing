@@ -4,8 +4,10 @@ const port = 3300;
 const postsRouter = require("./routers/posts")
 
 app.listen(port, ()=>{
-    console.log(`listening at port: ${port}`)
+    console.log(`listening at port: ${port}`);
 });
+
+app.use(express.static(`public`));
 
 app.get("/", (req, res)=>{
     res.send("Benvenuti sul mio blog");
